@@ -77,9 +77,10 @@
 <div class="chat-header">
   <h1>💬 Chat with Support</h1>
   <div class="avatars">
+    <!-- Replace these image URLs with your own agent photos -->
     <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Agent 1">
     <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Agent 2">
-    <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Agent 3">
+    <!-- Add more or replace existing avatars easily -->
   </div>
   <div class="subtitle">Typically replies under 30 minutes</div>
   <button class="cta-button" onclick="window.$crisp.push(['do','chat:open']);">Send Message Now</button>
@@ -103,12 +104,15 @@
     // Auto open chat
     window.$crisp.push(["do", "chat:open"]);
 
-    // Pre-filled message
+    // Pre-filled message for user
     window.$crisp.push([
       "do",
       "message:prefill",
       ["👋 Hello Sir, need Mahadev Book ID"]
     ]);
+
+    // Enable Crisp Bot (auto replies)
+    window.$crisp.push(["do", "bot:enable"]);
   });
 </script>
 
