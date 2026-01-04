@@ -1,85 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chat with Support</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #FFD700; /* Yellow background */
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-    .chat-header {
-      background-color: #fff;
-      border-radius: 10px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      margin-bottom: 20px;
-      width: 90%;
-      max-width: 400px;
-    }
-    .chat-header h1 {
-      margin: 0;
-      font-size: 24px;
-    }
-    .chat-header img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      margin: 5px;
-    }
-    .subtitle {
-      color: green;
-      font-size: 14px;
-      margin-top: 5px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mahadev Book Support</title>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap');
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #FFD700;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .chat-header {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    width: 95%;
+    max-width: 420px;
+  }
+
+  .chat-header h1 {
+    margin: 0 0 15px 0;
+    font-size: 26px;
+    font-weight: 700;
+  }
+
+  .avatars {
+    margin: 15px 0;
+  }
+
+  .avatars img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    margin: 0 -5px;
+    border: 3px solid #fff;
+  }
+
+  .subtitle {
+    color: #2e7d32;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .cta-button {
+    margin-top: 25px;
+    background-color: #2e7d32;
+    color: #fff;
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .cta-button:hover {
+    background-color: #1b4f20;
+  }
+
+</style>
 </head>
 <body>
 
-  <div class="chat-header">
-    <h1>💬 Chat with support</h1>
-    <div>
-      <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="User 1">
-      <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="User 2">
-      <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="User 3">
-    </div>
-    <div class="subtitle">Typically replies under 30 minutes</div>
+<div class="chat-header">
+  <h1>💬 Chat with Support</h1>
+  <div class="avatars">
+    <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Agent 1">
+    <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Agent 2">
+    <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Agent 3">
   </div>
+  <div class="subtitle">Typically replies under 30 minutes</div>
+  <button class="cta-button" onclick="window.$crisp.push(['do','chat:open']);">Send Message Now</button>
+</div>
 
-  <!-- Crisp Chat -->
-  <script type="text/javascript">
-    window.$crisp = [];
-    window.CRISP_WEBSITE_ID = "730c9ec9-8473-4bba-861a-d38b842e36bc";
-    (function () {
-      var d = document;
-      var s = d.createElement("script");
-      s.src = "https://client.crisp.chat/l.js";
-      s.async = 1;
-      d.getElementsByTagName("head")[0].appendChild(s);
-    })();
-  </script>
+<!-- Crisp Chat -->
+<script type="text/javascript">
+  window.$crisp = [];
+  window.CRISP_WEBSITE_ID = "730c9ec9-8473-4bba-861a-d38b842e36bc";
+  (function () {
+    var d = document;
+    var s = d.createElement("script");
+    s.src = "https://client.crisp.chat/l.js";
+    s.async = 1;
+    d.getElementsByTagName("head")[0].appendChild(s);
+  })();
+</script>
 
-  <script>
-    window.addEventListener("load", function () {
-      // Auto open chat
-      window.$crisp.push(["do", "chat:open"]);
+<script>
+  window.addEventListener("load", function () {
+    // Auto open chat
+    window.$crisp.push(["do", "chat:open"]);
 
-      // Auto greeting message
-      window.$crisp.push([
-        "do",
-        "message:send",
-        ["Hello! 👋 How can I assist you today?"]
-      ]);
-    });
-  </script>
+    // Pre-filled message
+    window.$crisp.push([
+      "do",
+      "message:prefill",
+      ["👋 Hello Sir, need Mahadev Book ID"]
+    ]);
+  });
+</script>
 
 </body>
 </html>
