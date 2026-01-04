@@ -75,18 +75,15 @@
 <body>
 
 <div class="chat-header">
-  <h1>💬 Chat with Mahadevbook agent</h1>
+  <h1>💬 Chat with Mahadebook Agent</h1>
   <div class="avatars">
-    <!-- Replace these image URLs with your own agent photos -->
     <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Agent 1">
     <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Agent 2">
-    <!-- Add more or replace existing avatars easily -->
   </div>
-  <div class="subtitle">Typically replies under 30 second</div>
+  <div class="subtitle">Typically replies under 30 seconds</div>
   <button class="cta-button" onclick="window.$crisp.push(['do','chat:open']);">Send Message Now</button>
 </div>
 
-<!-- Crisp Chat -->
 <script type="text/javascript">
   window.$crisp = [];
   window.CRISP_WEBSITE_ID = "730c9ec9-8473-4bba-861a-d38b842e36bc";
@@ -97,23 +94,6 @@
     s.async = 1;
     d.getElementsByTagName("head")[0].appendChild(s);
   })();
-</script>
-
-<script>
-  window.addEventListener("load", function () {
-    // Auto open chat
-    window.$crisp.push(["do", "chat:open"]);
-
-    // Pre-filled message for user
-    window.$crisp.push([
-      "do",
-      "message:prefill",
-      ["👋 Hello Sir, need Mahadev Book ID"]
-    ]);
-
-    // Enable Crisp Bot (auto replies)
-    window.$crisp.push(["do", "bot:enable"]);
-  });
 </script>
 
 </body>
